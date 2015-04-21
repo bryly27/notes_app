@@ -28,7 +28,7 @@
 	</div>
 	
 	<div class='response container'>
-		<?php require_once('partial_index.php') ?>
+		<?php include_once'partial_index.php' ?>
 	</div>
 
 	
