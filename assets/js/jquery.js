@@ -11,6 +11,10 @@ $(document).ready(function(){
 			// 	return false;
 			// })
 
+			$.get('/notes/get', function(response){
+				$('.response').html(response);
+			})
+
 			$(document).on('submit', 'form', function(){
 				$.post(
 						$(this).attr('action'),

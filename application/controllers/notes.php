@@ -14,6 +14,12 @@ class Notes extends CI_Controller {
 		$this->load->view('notes', $array);
 	}
 
+	public function get()
+	{
+		$array['notes'] = $this->Note->get_notes();
+		$this->load->view('partial_index', $array);
+	}
+
 	public function create()
 	{
 		if(empty($this->input->post('title')))
