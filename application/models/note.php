@@ -4,7 +4,10 @@ class Note extends CI_Model {
 
     public function create($post)
     {
-        return $this->db->query("INSERT INTO notes (title, created_at, updated_at) VALUES (?, NOW(), NOW())", array($post['title']));
+       return $this->db->query("INSERT INTO notes (title, created_at, updated_at) VALUES (?, NOW(), NOW())", array($post['title']));
+
+       // $query = "INSERT INTO notes (title, created_at, updated_at) VALUES (?, NOW(), NOW())";
+       // return $this->db->query($query, array($post['title']));
     }
 
     public function get_notes()
@@ -22,6 +25,7 @@ class Note extends CI_Model {
         return $this->db->query("DELETE FROM notes WHERE id = ?", array($id));
     }
 
+    // $data = $this->security->xss_clean($data);
 
   
 }
