@@ -2,6 +2,8 @@
 
 class Note extends CI_Model {
 
+    date_default_timezone_set('America/Los_Angeles');
+
     public function create($post)
     {
        return $this->db->query("INSERT INTO notes (title, created_at, updated_at) VALUES (?, NOW(), NOW())", array($post['title']));
