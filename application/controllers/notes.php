@@ -6,6 +6,7 @@ class Notes extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Note');
+		date_default_timezone_set('America/Los_Angeles');
 	}
 
 	public function index()
