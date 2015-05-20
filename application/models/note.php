@@ -17,7 +17,7 @@ class Note extends CI_Model {
 
     public function update($post)
     {
-        return $this->db->query("UPDATE notes SET description = ? WHERE id = ?", array($post['description'], $post['note_id']));
+        return $this->db->query("UPDATE notes SET description = ?, updated_at = NOW() WHERE id = ?", array($post['description'], $post['note_id']));
     }
 
     public function delete($id)
